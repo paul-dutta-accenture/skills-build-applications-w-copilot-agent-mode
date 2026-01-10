@@ -15,6 +15,23 @@ source octofit-tracker/backend/venv/bin/activate
 pip install -r octofit-tracker/backend/requirements.txt
 ```
 
+
+## Example API Root Response (Codespaces)
+
+When running in GitHub Codespaces, the API root returns URLs like:
+
+```
+{
+	"users": "https://YOUR_CODESPACE_NAME-8000.app.github.dev/api/users/",
+	"teams": "https://YOUR_CODESPACE_NAME-8000.app.github.dev/api/teams/",
+	"activities": "https://YOUR_CODESPACE_NAME-8000.app.github.dev/api/activities/",
+	"leaderboards": "https://YOUR_CODESPACE_NAME-8000.app.github.dev/api/leaderboards/",
+	"workouts": "https://YOUR_CODESPACE_NAME-8000.app.github.dev/api/workouts/"
+}
+```
+
+Replace `YOUR_CODESPACE_NAME` with your actual Codespace name. The key string `-8000.app.github.dev/api/workouts` will always appear in the workouts URL.
+
 Notes:
 - Use Django's ORM for database creation and operations (do not run direct MongoDB scripts to create models/data).
 - Check `.github/instructions/octofit_tracker_setup_project.instructions.md` for project-specific guidelines.
