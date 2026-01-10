@@ -50,4 +50,18 @@ class Command(BaseCommand):
         Leaderboard.objects.create(team=marvel, total_points=350)
         Leaderboard.objects.create(team=dc, total_points=230)
 
+
+        # Verification: print counts and sample documents
         self.stdout.write(self.style.SUCCESS('octofit_db database populated with test data'))
+        self.stdout.write(f"Users count: {User.objects.count()}")
+        self.stdout.write(f"Teams count: {Team.objects.count()}")
+        self.stdout.write(f"Workouts count: {Workout.objects.count()}")
+        self.stdout.write(f"Activities count: {Activity.objects.count()}")
+        self.stdout.write(f"Leaderboards count: {Leaderboard.objects.count()}")
+
+        # Print sample documents
+        self.stdout.write(f"Sample User: {User.objects.first()}")
+        self.stdout.write(f"Sample Team: {Team.objects.first()}")
+        self.stdout.write(f"Sample Workout: {Workout.objects.first()}")
+        self.stdout.write(f"Sample Activity: {Activity.objects.first()}")
+        self.stdout.write(f"Sample Leaderboard: {Leaderboard.objects.first()}")
